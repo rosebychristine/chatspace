@@ -9,14 +9,14 @@
 ### Association
 - has_many :messages
 - has_many :groups_users
-- has_many :groups, thorough: :groups_users
+- has_many :groups, through: :groups_users
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :users:groups, through: :group_users
+- has_many :users, through: :group_users
 - has_many :messages
 - has_many :group_users
 
@@ -31,7 +31,7 @@
 |group_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group=
+- belongs_to :group
 - belongs_to :user
 
 
