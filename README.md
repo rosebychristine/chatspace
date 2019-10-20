@@ -8,7 +8,8 @@
 |name|string|null: false, index: true|
 ### Association
 - has_many :messages
-- has_many :groups, thorough: groups_users
+- has_many :groups_users
+- has_many :groups, thorough: :groups_users
 
 ## groupテーブル
 |Column|Type|Options|
@@ -30,7 +31,7 @@
 |group_id|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
+- belongs_to :group=
 - belongs_to :user
 
 
