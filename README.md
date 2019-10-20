@@ -7,16 +7,17 @@
 |password|string|null: false|
 |name|string|null: false, index: true|
 ### Association
-- has_many :comments
-- has_many :groups_users
+- has_many :messages
+- has_many :groups, thorough: groups_users
 
 ## groupテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
-- has_many :users
-- has_many :comments
+- has_many :users:groups, through: :group_users
+- has_many :messages
+- has_many :group_users
 
 
 
@@ -31,7 +32,6 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
-- has_many :comments
 
 
 
